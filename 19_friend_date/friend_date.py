@@ -4,7 +4,7 @@ def friend_date(a, b):
     - a: friend #1, a tuple of (name, age, list-of-hobbies)
     - b: same, for friend #2
 
-    Returns True if they have any hobbies in common, False is not.
+    Returns True if they have any hobbies in common, False if not.
 
         >>> elmo = ('Elmo', 5, ['hugging', 'being nice'])
         >>> sauron = ('Sauron', 5000, ['killing hobbits', 'chess'])
@@ -16,3 +16,13 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+
+    # convert the list of hobbies into a set for a and b
+    hobbies_a = set(a[2])
+    hobbies_b = set(b[2])
+
+    # intersect the sets
+    common_hobbies = hobbies_a & hobbies_b
+
+    # if the len of the resulting set is 0 return False else True
+    return len(common_hobbies) > 0
