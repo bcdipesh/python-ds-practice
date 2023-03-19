@@ -11,3 +11,6 @@ def remove_every_other(lst):
         >>> lst
         [1, 2, 3, 4, 5]
     """
+
+    # use list slicing to get every other element from the list and return
+    return lst[::2]
