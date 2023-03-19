@@ -14,3 +14,23 @@ def extract_full_names(people):
         >>> extract_full_names(names)
         ['Ada Lovelace', 'Grace Hopper']
     """
+
+    # make a new list
+    full_names = []
+
+    # loop over people list
+    for person in people:
+        # for each people loop over current people dictionary keys
+        # declare a variable called full_name and initialize it to empty str
+        full_name = ""
+        for key in person.keys():
+            # make a full name using the key and value pair for the current person
+            full_name += person[key] + " "
+
+        # remove the trailing white space
+        full_name = full_name.rstrip()
+        # add it to the list
+        full_names.append(full_name)
+
+    # return the new list
+    return full_names
