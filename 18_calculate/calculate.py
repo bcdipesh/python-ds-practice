@@ -24,5 +24,54 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
     If a valid operation isn't provided, return None.
 
         >>> calculate('foo', 2, 3)
-        
+
     """
+
+    # convert operation to lowercase
+    operation = operation.lower()
+
+    # create a variable result
+    result = None
+
+    # check if operation is "add"
+    if operation == "add":
+        # if this is the case add a and b and store the result
+        result = a + b
+
+        # check if make_int is true
+        if make_int == True:
+            # if this is the case convert result to int
+            result = int(result)
+    # elif check if operation is "subtract"
+    elif operation == "subtract":
+        # if this is the case subtract a and b and store the result
+        result = a - b
+
+        # check if make_int is true
+        if make_int == True:
+            # if this is the case convert result to int
+            result = int(result)
+    # elif check if operation is "multiply"
+    elif operation == "multiply":
+        # if this is the case multiply a and b and store the result
+        result = a * b
+
+        # check if make_int is true
+        if make_int == True:
+            # if this is the case convert result to int
+            result = int(result)
+    # elif check if operation is "divide"
+    elif operation == "divide":
+        # if this is the case divide a and b and store the result
+        result = a / b
+
+        # check if make_int is true
+        if make_int == True:
+            # if this is the case convert result to int
+            result = int(result)
+    # else return result
+    else:
+        return result
+
+    # return the result with the message provided
+    return f"{message} {result}"
