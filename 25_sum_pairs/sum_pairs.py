@@ -21,3 +21,15 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+    # use range to loop over num in nums
+    for x in range(len(nums)):
+        # use range to loop over num in nums that ends before last index
+        for y in range(len(nums) - 1):
+            # check if the sum of num from the outerloop and num from innerloop is equal to goal
+            if nums[x] + nums[y+1] == goal:
+                # if that is the case return a tuple that contains those num
+                return (nums[x], nums[y+1])
+
+    # return empty tuple
+    return ()
