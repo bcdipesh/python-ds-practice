@@ -23,3 +23,9 @@ def sum_range(nums, start=0, end=None):
         >>> sum_range(nums, 1, 99)
         9
     """
+
+    # create a new list called num_range using start and end
+    num_range = nums[start:(end + 1) if isinstance(end, int) else end]
+
+    # return sum of numbers inside num_range
+    return sum(num_range)
