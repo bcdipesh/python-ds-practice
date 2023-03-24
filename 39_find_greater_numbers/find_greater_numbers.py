@@ -19,3 +19,18 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+
+    # create a variable called times_followed and set it to 0
+    times_followed = 0
+
+    # loop over nums from the starting index
+    for i in range(0, len(nums)):
+        # loop over nums from current index + 1
+        for j in range(i + 1, len(nums)):
+            # check if current number from outer loop is smaller than current number in this loop
+            if nums[i] < nums[j]:
+                # if that is the case increate times_followed by 1
+                times_followed += 1
+
+    # return times_followed
+    return times_followed
